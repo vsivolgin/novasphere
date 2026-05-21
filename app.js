@@ -4,8 +4,7 @@ const NEWS = [
     tag: "Луна",
     tagClass: "moon",
     imageClass: "moon",
-    image:
-      "https://images-assets.nasa.gov/image/as17-145-22285/as17-145-22285~medium.jpg",
+    image: "images/moon-surface.jpg",
     imageAlt: "Поверхность Луны, кратеры и лунный реголит",
     date: "19 мая 2026",
     readTime: "6 мин",
@@ -17,8 +16,7 @@ const NEWS = [
     tag: "Арктика",
     tagClass: "arctic",
     imageClass: "arctic",
-    image:
-      "https://images.unsplash.com/photo-1593113598332-246c27ca1d61?auto=format&fit=crop&w=1200&q=80",
+    image: "images/arctic.jpg",
     imageAlt: "Ледяные поля Арктики и ледокол в полярных водах",
     date: "19 мая 2026",
     readTime: "5 мин",
@@ -30,8 +28,7 @@ const NEWS = [
     tag: "Марс",
     tagClass: "mars",
     imageClass: "mars",
-    image:
-      "https://images-assets.nasa.gov/image/KSC-20200530-PH-KLS01_0058/KSC-20200530-PH-KLS01_0058~medium.jpg",
+    image: "images/rocket.jpg",
     imageAlt: "Запуск ракеты — тесты для межпланетных миссий",
     date: "18 мая 2026",
     readTime: "4 мин",
@@ -43,8 +40,7 @@ const NEWS = [
     tag: "Орбита",
     tagClass: "",
     imageClass: "orbit",
-    image:
-      "https://images-assets.nasa.gov/image/PIA00405/PIA00405~medium.jpg",
+    image: "images/moon-far.jpg",
     imageAlt: "Луна в космосе — зонд и сбор образцов с обратной стороны",
     date: "18 мая 2026",
     readTime: "3 мин",
@@ -56,8 +52,7 @@ const NEWS = [
     tag: "Технологии",
     tagClass: "",
     imageClass: "tech",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+    image: "images/tech-lab.jpg",
     imageAlt: "Инженерный центр — ядерные и энергетические технологии",
     date: "17 мая 2026",
     readTime: "5 мин",
@@ -69,8 +64,7 @@ const NEWS = [
     tag: "Марс",
     tagClass: "mars",
     imageClass: "mars",
-    image:
-      "https://images-assets.nasa.gov/image/PIA24420/PIA24420~medium.jpg",
+    image: "images/mars-surface.jpg",
     imageAlt: "Марсианский пейзаж — исследование поверхности ровером",
     date: "17 мая 2026",
     readTime: "4 мин",
@@ -82,8 +76,7 @@ const NEWS = [
     tag: "Луна",
     tagClass: "moon",
     imageClass: "moon",
-    image:
-      "https://images-assets.nasa.gov/image/iss065e001860/iss065e001860~medium.jpg",
+    image: "images/earth-orbit.jpg",
     imageAlt: "Вид на Землю и Луну с орбиты — лунная связь и навигация",
     date: "16 мая 2026",
     readTime: "3 мин",
