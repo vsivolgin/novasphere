@@ -403,6 +403,16 @@ main {
   background: linear-gradient(160deg, #030508 0%, #312e81 50%, #a855f7 100%);
 }
 
+.news-image.arctic {
+  background: linear-gradient(160deg, #030508 0%, #0c4a6e 40%, #7dd3fc 100%);
+}
+
+.news-tag.arctic {
+  background: rgba(125, 211, 252, 0.15);
+  border-color: #7dd3fc;
+  color: #7dd3fc;
+}
+
 .news-tag {
   position: absolute;
   top: 1rem;
