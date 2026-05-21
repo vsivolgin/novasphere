@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaSphere — Портал науки и космоса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula nebula-1" aria-hidden="true"></div>
+  <div class="nebula nebula-2" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">Nova<span>Sphere</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#news" class="active">Новости</a></li>
+        <li><a href="#moon">Луна</a></li>
+        <li><a href="#mars">Марс</a></li>
+        <li><a href="#tech">Технологии</a></li>
+        <li><a href="#missions">Миссии</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Меню" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">◉ LIVE · Космический мониторинг 2026</div>
+      <h1 class="hero-title">
+        <span class="line">Границы</span>
+        <span class="line accent">человечества</span>
+        <span class="line">расширяются</span>
+      </h1>
+      <p class="hero-subtitle">
+        Актуальные новости о покорении Луны и Марса, прорывах в науке
+        и технологиях будущего — из первых рук исследователей космоса.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value" data-count="12">0</span>
+          <span class="stat-label">активных миссий</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-count="847">0</span>
+          <span class="stat-label">дней на орбите Луны</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-count="2034">0</span>
+          <span class="stat-label">цель: база на Марсе</span>
+        </div>
+      </div>
+      <a href="#news" class="cta-btn">
+        <span>Читать свежие новости</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </section>
+
+    <section id="news" class="section news-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-deco">//</span> Свежие новости
+        </h2>
+        <p class="section-desc">Последние 48 часов в космической индустрии</p>
+      </div>
+      <div class="news-grid" id="news-grid"></div>
+    </section>
+
+    <section id="moon" class="section moon-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-deco">//</span> Покорение Луны
+        </h2>
+        <p class="section-desc">Артемида, посадочные модули и лунные базы</p>
+      </div>
+      <div class="timeline" id="moon-timeline"></div>
+    </section>
+
+    <section id="mars" class="section mars-section">
+      <div class="planet-showcase">
+        <div class="planet-visual mars-planet">
+          <div class="planet-glow"></div>
+          <div class="planet-surface"></div>
+          <div class="orbit-ring"></div>
+        </div>
+        <div class="planet-content">
+          <h2 class="section-title">
+            <span class="title-deco">//</span> Марс — следующий рубеж
+          </h2>
+          <p class="mars-lead">
+            Миссии Perseverance, Ingenuity и подготовка пилотируемых полётов
+            приближают человечество к первой колонии на Красной планете.
+          </p>
+          <ul class="mars-highlights" id="mars-highlights"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech" class="section tech-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-deco">//</span> Технологии будущего
+        </h2>
+      </div>
+      <div class="tech-cards" id="tech-cards"></div>
+    </section>
+
+    <section id="missions" class="section missions-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-deco">//</span> Активные миссии
+        </h2>
+      </div>
+      <div class="missions-table-wrap">
+        <table class="missions-table">
+          <thead>
+            <tr>
+              <th>Миссия</th>
+              <th>Оператор</th>
+              <th>Цель</th>
+              <th>Статус</th>
+              <th>ETA</th>
+            </tr>
+          </thead>
+          <tbody id="missions-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">◈</span>
+        <span>NovaSphere</span>
+      </div>
+      <p class="footer-tagline">Прототип портала науки и технологий · 2026</p>
+      <p class="footer-note">Данные носят демонстрационный характер</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
