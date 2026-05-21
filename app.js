@@ -4,6 +4,9 @@ const NEWS = [
     tag: "Луна",
     tagClass: "moon",
     imageClass: "moon",
+    image:
+      "https://images-assets.nasa.gov/image/as17-145-22285/as17-145-22285~medium.jpg",
+    imageAlt: "Поверхность Луны, кратеры и лунный реголит",
     date: "19 мая 2026",
     readTime: "6 мин",
     title: "Artemis IV: NASA подтвердило дату высадки экипажа у южного полюса Луны",
@@ -14,6 +17,9 @@ const NEWS = [
     tag: "Арктика",
     tagClass: "arctic",
     imageClass: "arctic",
+    image:
+      "https://images.unsplash.com/photo-1593113598332-246c27ca1d61?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Ледяные поля Арктики и ледокол в полярных водах",
     date: "19 мая 2026",
     readTime: "5 мин",
     title: "«Северный полюс-2026»: ледоколы открыли круглогодичный маршрут через СМП",
@@ -24,6 +30,9 @@ const NEWS = [
     tag: "Марс",
     tagClass: "mars",
     imageClass: "mars",
+    image:
+      "https://images-assets.nasa.gov/image/KSC-20200530-PH-KLS01_0058/KSC-20200530-PH-KLS01_0058~medium.jpg",
+    imageAlt: "Запуск ракеты — тесты для межпланетных миссий",
     date: "18 мая 2026",
     readTime: "4 мин",
     title: "SpaceX завершила тесты теплозащиты Starship для входа в атмосферу Марса",
@@ -34,6 +43,9 @@ const NEWS = [
     tag: "Орбита",
     tagClass: "",
     imageClass: "orbit",
+    image:
+      "https://images-assets.nasa.gov/image/PIA00405/PIA00405~medium.jpg",
+    imageAlt: "Луна в космосе — зонд и сбор образцов с обратной стороны",
     date: "18 мая 2026",
     readTime: "3 мин",
     title: "Китайский зонд Chang'e-8 доставил первые образцы льда с обратной стороны",
@@ -44,6 +56,9 @@ const NEWS = [
     tag: "Технологии",
     tagClass: "",
     imageClass: "tech",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Инженерный центр — ядерные и энергетические технологии",
     date: "17 мая 2026",
     readTime: "5 мин",
     title: "Ядерный реактор Kilopower прошёл испытания для марсианской энергосети",
@@ -54,6 +69,9 @@ const NEWS = [
     tag: "Марс",
     tagClass: "mars",
     imageClass: "mars",
+    image:
+      "https://images-assets.nasa.gov/image/PIA24420/PIA24420~medium.jpg",
+    imageAlt: "Марсианский пейзаж — исследование поверхности ровером",
     date: "17 мая 2026",
     readTime: "4 мин",
     title: "Perseverance обнаружил органические молекулы в древнем русле реки",
@@ -64,6 +82,9 @@ const NEWS = [
     tag: "Луна",
     tagClass: "moon",
     imageClass: "moon",
+    image:
+      "https://images-assets.nasa.gov/image/iss065e001860/iss065e001860~medium.jpg",
+    imageAlt: "Вид на Землю и Луну с орбиты — лунная связь и навигация",
     date: "16 мая 2026",
     readTime: "3 мин",
     title: "Европейский модуль ESPRIT установлен на орбите Луны",
@@ -138,6 +159,7 @@ function renderNews() {
     (n) => `
     <article class="news-card reveal ${n.featured ? "featured" : ""}">
       <div class="news-image ${n.imageClass}">
+        <img src="${n.image}" alt="${n.imageAlt}" loading="lazy" decoding="async" />
         <span class="news-tag ${n.tagClass}">${n.tag}</span>
       </div>
       <div class="news-body">
