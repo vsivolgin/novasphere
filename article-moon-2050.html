@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Луна 2050: фантазии и реальные планы — NovaSphere</title>
+  <meta name="description" content="Обзорная статья: будем ли мы жить на Луне к 2050 году. Артемида, Starship, китайско-российская ILRS, гелий-3, военные базы и реальные сроки лунной колонизации." />
+  <link rel="canonical" href="https://vsivolgin.github.io/novasphere/article-moon-2050.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="NovaSphere" />
+  <meta property="og:locale"      content="ru_RU" />
+  <meta property="og:url"         content="https://vsivolgin.github.io/novasphere/article-moon-2050.html" />
+  <meta property="og:title"       content="Луна 2050: фантазии и реальные планы. Будем ли мы жить на Луне?" />
+  <meta property="og:description" content="Гонка ведущих мировых держав за Луну: Artemis, Starship, китайско-российская ILRS, гелий-3 и военные базы. Что реально, а что фантазия — к 2050 году." />
+  <meta property="og:image"       content="https://vsivolgin.github.io/novasphere/images/article-moon-cover.jpg" />
+  <meta property="og:image:alt"   content="Лунная база 2050 — гонка мировых держав за Луну" />
+  <meta property="og:image:width"  content="1600" />
+  <meta property="og:image:height" content="900" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Луна 2050: фантазии и реальные планы" />
+  <meta name="twitter:description" content="Гонка держав за Луну: Artemis, Starship, ILRS, гелий-3 и военные базы. Что реально к 2050 году." />
+  <meta name="twitter:image"       content="https://vsivolgin.github.io/novasphere/images/article-moon-cover.jpg" />
+
+  <meta name="theme-color" content="#030508" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="article.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula nebula-1" aria-hidden="true"></div>
+  <div class="nebula nebula-2" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">Nova<span>Sphere</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#news">Новости</a></li>
+        <li><a href="index.html#moon" class="active">Луна</a></li>
+        <li><a href="index.html#mars">Марс</a></li>
+        <li><a href="index.html#tech">Технологии</a></li>
+        <li><a href="index.html#missions">Миссии</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Меню" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article">
+      <!-- ════════ ОБЛОЖКА ════════ -->
+      <section class="article-hero">
+        <div class="article-hero-img" style="background-image: url('images/article-moon-cover.jpg');"></div>
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-content">
+          <div class="article-meta">
+            <span class="article-tag mars">Луна</span>
+            <span class="article-tag arctic">Лонгрид</span>
+            <span class="article-date">24 мая 2026 · 15 мин чтения</span>
+          </div>
+          <h1 class="article-title">
+            <span class="line">Луна 2050:</span>
+            <span class="line accent">фантазии и&nbsp;реальные планы.</span>
+            <span class="line">Будем&nbsp;ли мы&nbsp;жить на&nbsp;Луне?</span>
+          </h1>
+          <p class="article-lead">
+            Через четверть века Луна перестанет быть «следом Армстронга» и&nbsp;превратится
+            в&nbsp;индустриальную площадку трёх держав. Разбираемся, что в&nbsp;планах
+            США, Китая и&nbsp;России&nbsp;— реальная инженерия, что&nbsp;— маркетинг,
+            а&nbsp;что&nbsp;— чистая фантазия.
+          </p>
+        </div>
+      </section>
+
+      <!-- ════════ ТЕКСТ СТАТЬИ ════════ -->
+      <div class="article-body">
+
+        <p class="dropcap">
+          В&nbsp;1972&nbsp;году Юджин Сернан, последний человек на&nbsp;Луне, оставил
+          в&nbsp;лунной пыли след ботинка и&nbsp;сказал: «Мы&nbsp;вернёмся». Пятьдесят
+          с&nbsp;лишним лет спустя возврат всё ещё планируется, но&nbsp;уже не&nbsp;ради
+          флага. К&nbsp;2050&nbsp;году Луна должна стать первым по-настоящему обжитым
+          небесным телом за&nbsp;пределами Земли&nbsp;— с&nbsp;постоянными станциями,
+          добычей ресурсов и&nbsp;собственной экономикой объёмом 250–500&nbsp;млрд&nbsp;$.
+        </p>
+
+        <p>
+          Только вот строить эту лунную экономику будут параллельно как минимум три
+          конкурирующие коалиции&nbsp;— и&nbsp;именно их&nbsp;борьба определит, кто
+          будет в&nbsp;первой волне «лунных жителей», а&nbsp;кто опоздает на&nbsp;старт.
+          Эта статья&nbsp;— карта реальных планов и&nbsp;честная оценка того, что
+          сбудется к&nbsp;2050‑му.
+        </p>
+
+        <h2><span class="hh">01</span> Зачем вообще возвращаться на&nbsp;Луну</h2>
+
+        <figure class="article-figure">
+          <img src="images/article-moon-race-powers.jpg" alt="Гонка ведущих мировых держав за Луну — США, Китай и Россия" loading="lazy" />
+          <figcaption>
+            Луна 2026&nbsp;— это новая «космическая шахматная доска»: США через Artemis,
+            Китай и&nbsp;Россия через ILRS, плюс региональные игроки. Гонка идёт
+            не&nbsp;за&nbsp;флагом, а&nbsp;за&nbsp;инфраструктурой.
+          </figcaption>
+        </figure>
+
+        <p>
+          Луна интересна сразу с&nbsp;четырёх сторон. <strong>Ресурсы:</strong> южный
+          полюс хранит миллиарды тонн водяного льда в&nbsp;кратерах постоянной тени,
+          а&nbsp;в&nbsp;реголите содержатся редкоземельные металлы и&nbsp;уникальный
+          изотоп гелий‑3&nbsp;— потенциальное топливо для термоядерной энергетики.
+          <strong>Инфраструктура:</strong> Луна&nbsp;— идеальная заправка для полётов
+          к&nbsp;Марсу: малая гравитация и&nbsp;отсутствие атмосферы делают её&nbsp;дешёвым
+          трамплином. <strong>Наука:</strong> обратная сторона Луны&nbsp;— лучшее место
+          для радиоастрономии (нет земных помех), а&nbsp;кратеры&nbsp;— геологический
+          архив Солнечной системы. <strong>Стратегия:</strong> кто первым закрепится
+          в&nbsp;ключевых точках полюса, тот задаёт правила игры на&nbsp;десятилетия вперёд.
+        </p>
+
+        <div class="callout">
+          <span class="callout-tag">Цифры, которые меняют всё</span>
+          <p>
+            По&nbsp;оценке CSIS, постройка постоянной лунной базы обойдётся в&nbsp;35&nbsp;млрд&nbsp;$,
+            ежегодная эксплуатация&nbsp;— 7,35&nbsp;млрд. Это меньше, чем годовой бюджет
+            одного авианосного соединения США. Лунная экономика к&nbsp;2050‑му оценивается
+            в&nbsp;250–500&nbsp;млрд&nbsp;$&nbsp;— уже сейчас она привлекает частные
+            инвестиции.
+          </p>
+        </div>
+
+        <h2><span class="hh">02</span> США и&nbsp;Artemis: Starship как ключ ко&nbsp;всему</h2>
+
+        <figure class="article-figure">
+          <img src="images/article-starship-moon.jpg" alt="SpaceX Starship Human Landing System на лунной поверхности с астронавтами Artemis" loading="lazy" />
+          <figcaption>
+            Starship&nbsp;HLS на&nbsp;южном полюсе Луны. Высота ракеты&nbsp;— 50&nbsp;метров;
+            это первая в&nbsp;истории система, способная доставить на&nbsp;Луну сразу
+            сотни тонн груза за&nbsp;один рейс.
+          </figcaption>
+        </figure>
+
+        <p>
+          Программа Artemis&nbsp;— главный американский ответ. Сценарий следующий:
+          Artemis&nbsp;III возвращает астронавтов на&nbsp;Луну не&nbsp;ранее 2028&nbsp;года,
+          посадка идёт через SpaceX Starship&nbsp;HLS. Далее&nbsp;— орбитальная станция
+          Gateway, серия миссий Artemis IV–VII и&nbsp;к&nbsp;концу 2030‑х первая
+          постоянная база. Маск открыто заявил о&nbsp;«самоподдерживающемся городе
+          на&nbsp;Луне в&nbsp;течение десятилетия»&nbsp;— цифры явно оптимистичные,
+          но&nbsp;направление выбрано.
+        </p>
+
+        <p>
+          Ключевой инженерный вызов&nbsp;— дозаправка. Чтобы Starship&nbsp;HLS долетел
+          с&nbsp;низкой околоземной орбиты до&nbsp;Луны и&nbsp;сел, ему нужно ~1200&nbsp;тонн
+          топлива (метан&nbsp;+&nbsp;жидкий кислород). Один Starship‑танкер привозит
+          ~150–200&nbsp;тонн&nbsp;— значит, нужно 6–8 заправочных полётов и&nbsp;орбитальный
+          топливный депот. Это никогда раньше в&nbsp;истории космонавтики не&nbsp;делалось
+          в&nbsp;таких масштабах. SpaceX уже провела первые демонстрации перекачки
+          топлива в&nbsp;невесомости, серьёзный тест Propellant Transfer Demo запланирован
+          на&nbsp;2026&nbsp;год.
+        </p>
+
+        <p>
+          В&nbsp;параллель идёт ISRU&nbsp;— производство ресурсов на&nbsp;месте.
+          NASA в&nbsp;2025&nbsp;году опубликовало план: к&nbsp;концу 2030‑х&nbsp;— пилотный
+          завод по&nbsp;добыче кислорода из&nbsp;реголита (молекулярный электролиз
+          расплавленного реголита, MRE), затем переход к&nbsp;водяному льду в&nbsp;кратерах.
+          Если ISRU заработает, Starship сможет дозаправляться кислородом прямо на&nbsp;Луне&nbsp;—
+          и&nbsp;это меняет всю экономику миссий примерно в&nbsp;5–10&nbsp;раз.
+        </p>
+
+        <h2><span class="hh">03</span> Китай и&nbsp;Россия: ILRS и&nbsp;ядерный реактор</h2>
+
+        <figure class="article-figure">
+          <img src="images/article-ilrs-base.jpg" alt="Международная лунная исследовательская станция ILRS Китая и России с ядерным реактором" loading="lazy" />
+          <figcaption>
+            International Lunar Research Station: модули прикрыты реголитом для защиты
+            от&nbsp;радиации, рядом&nbsp;— компактный ядерный реактор и&nbsp;антенны
+            связи с&nbsp;Землёй.
+          </figcaption>
+        </figure>
+
+        <p>
+          Китайско‑российский проект International Lunar Research Station&nbsp;— это
+          симметричный, но&nbsp;принципиально иной ответ Западу. План: до&nbsp;2030&nbsp;года&nbsp;—
+          высадка китайских тайконавтов через ракету «Чанчжэн‑10», в&nbsp;2030–2035&nbsp;годах&nbsp;—
+          развёртывание базовой инфраструктуры в&nbsp;районе южного полюса, к&nbsp;2035&nbsp;году&nbsp;—
+          ввод первого этапа ILRS, к&nbsp;2045‑му&nbsp;— расширенная постоянная база
+          с&nbsp;ядерной энергетикой.
+        </p>
+
+        <p>
+          Ключевой элемент&nbsp;— компактный ядерный реактор мощностью ~100&nbsp;кВт.
+          Россия в&nbsp;2025&nbsp;году подтвердила: «Росатом» совместно с&nbsp;CNSA
+          ведёт разработку реактора для лунной поверхности; цель ввода&nbsp;— 2035–2036&nbsp;годы.
+          Это решает главную проблему любой базы: ночь на&nbsp;Луне длится 14&nbsp;земных
+          суток, и&nbsp;солнечных батарей категорически не&nbsp;хватает. Реактор&nbsp;—
+          основа всего: жизнеобеспечение, связь, ISRU, обогрев, электролиз воды.
+        </p>
+
+        <p>
+          К&nbsp;ILRS присоединились или подписали меморандумы 17&nbsp;государств,
+          включая Беларусь, Венесуэлу, Пакистан, ЮАР, Никарагуа. Это уже не&nbsp;двусторонний
+          проект, а&nbsp;альтернативная коалиция, конкурирующая с&nbsp;американской
+          Artemis Accords (50+ стран). Луна 2050‑го&nbsp;— это не&nbsp;единое международное
+          сообщество, а&nbsp;как минимум два геополитических лагеря.
+        </p>
+
+        <div class="callout">
+          <span class="callout-tag">Военное измерение</span>
+          <p>
+            Договор о&nbsp;космосе 1967&nbsp;года запрещает размещение на&nbsp;Луне
+            ядерного оружия и&nbsp;военных баз&nbsp;— но&nbsp;он&nbsp;ничего не&nbsp;говорит
+            про двойное назначение. US Space Command в&nbsp;2025‑м официально включил
+            окололунное пространство в&nbsp;зону своих интересов. Китай и&nbsp;Россия
+            обсуждают «зоны безопасности» вокруг ILRS, куда вход «не‑партнёрам»
+            ограничен. Лунные базы&nbsp;— это и&nbsp;есть военная инфраструктура двойного
+            назначения, пусть и&nbsp;под научной вывеской.
+          </p>
+        </div>
+
+        <h2><span class="hh">04</span> Что добывать: вода, кислород и&nbsp;легендарный гелий‑3</h2>
+
+        <figure class="article-figure">
+          <img src="images/article-isru-mining.jpg" alt="Промышленная добыча водяного льда и производство ракетного топлива на южном полюсе Луны" loading="lazy" />
+          <figcaption>
+            ISRU‑установка в&nbsp;кратере постоянной тени: из&nbsp;ледяного реголита
+            получают воду, затем электролизом&nbsp;— водород и&nbsp;кислород для
+            ракетного топлива и&nbsp;дыхания.
+          </figcaption>
+        </figure>
+
+        <p>
+          Реальная лунная экономика 2040‑х строится вокруг трёх продуктов.
+          <strong>Кислород</strong>&nbsp;— 42&nbsp;%&nbsp;по&nbsp;массе любого лунного
+          реголита. Технология MRE (электролиз расплавленного реголита) уже отрабатывается
+          в&nbsp;CES 2026 Blue Origin показала прототип. <strong>Вода</strong>&nbsp;—
+          ключ к&nbsp;жизнеобеспечению и&nbsp;ракетному топливу. По&nbsp;оценкам, только
+          в&nbsp;южных кратерах содержится около 600&nbsp;млн&nbsp;тонн льда. Миссия
+          NASA PRIME‑1 уже бурит реголит, китайская «Чанъэ‑7» в&nbsp;2026‑м должна
+          подтвердить запасы.
+        </p>
+
+        <p>
+          А&nbsp;вот <strong>гелий‑3</strong>&nbsp;— любимая тема журналистов&nbsp;—
+          куда сложнее. Изотоп действительно есть в&nbsp;реголите (накапливался миллиарды
+          лет от&nbsp;солнечного ветра), его оценочные запасы&nbsp;— около 1&nbsp;млн&nbsp;тонн.
+          Стартап Interlune обещает продавать гелий‑3 по&nbsp;~10&nbsp;000&nbsp;$&nbsp;за&nbsp;грамм
+          (общий рынок&nbsp;— 300&nbsp;млн&nbsp;$ в&nbsp;год к&nbsp;2030‑м). Но&nbsp;для
+          термоядерной энергетики гелий‑3 ещё бесполезен: реакторы D‑He3&nbsp;— это
+          физика конца XXI&nbsp;века, не&nbsp;2050‑го. До&nbsp;тех пор гелий‑3&nbsp;—
+          это нишевый продукт для медицины (МРТ) и&nbsp;квантовых компьютеров, а&nbsp;не&nbsp;энергетическая
+          революция.
+        </p>
+
+        <h2><span class="hh">05</span> Что общего у&nbsp;всех планов: пять параллелей</h2>
+
+        <ol class="parallels">
+          <li>
+            <strong>Все идут на&nbsp;южный полюс.</strong> И&nbsp;NASA, и&nbsp;ILRS,
+            и&nbsp;Blue Origin, и&nbsp;ESA выбирают одну и&nbsp;ту&nbsp;же узкую полоску
+            кратеров около полюса&nbsp;— там лёд, постоянное солнце на&nbsp;пиках,
+            прямая связь с&nbsp;Землёй. К&nbsp;2040‑м это будет самый «густо населённый»
+            квадрат во&nbsp;всей Солнечной системе&nbsp;— и&nbsp;арена для трений
+            из‑за&nbsp;участков.
+          </li>
+          <li>
+            <strong>Ядерная энергия неизбежна.</strong> Без реактора лунная база
+            нежизнеспособна. И&nbsp;NASA, и&nbsp;Китай с&nbsp;Россией, и&nbsp;Blue
+            Origin независимо двинулись в&nbsp;сторону компактных реакторов&nbsp;—
+            принципиальная развилка пройдена.
+          </li>
+          <li>
+            <strong>Робототехника опережает людей.</strong> Tesla Optimus, китайские
+            гуманоиды, японские манипуляторы JAXA&nbsp;— к&nbsp;2030‑м основной труд
+            на&nbsp;Луне будут выполнять роботы. Маск открыто обсуждает «лунные фабрики
+            Optimus». Человеческое присутствие останется ограниченным&nbsp;— первые
+            постоянные экипажи это 4–12&nbsp;человек, а&nbsp;не&nbsp;тысячи.
+          </li>
+          <li>
+            <strong>Космос идёт за&nbsp;частными деньгами.</strong> SpaceX, Blue Origin,
+            Interlune, Astrobotic, ispace&nbsp;— первая волна лунной экономики держится
+            на&nbsp;контрактах NASA с&nbsp;частниками (CLPS, HLS, Artemis Accords).
+            Прежний «государственный» космос NASA образца Apollo больше не&nbsp;вернётся.
+          </li>
+          <li>
+            <strong>Срок «2050»&nbsp;— это про инфраструктуру, не&nbsp;про переселение.</strong>
+            К&nbsp;2050&nbsp;году на&nbsp;Луне будут постоянные базы, добыча, маршруты&nbsp;—
+            но&nbsp;не&nbsp;«колонии переселенцев». Жить там будут научные и&nbsp;технические
+            экипажи на&nbsp;ротации, а&nbsp;не&nbsp;семьи. Город Маска&nbsp;— это история
+            следующего поколения, после 2070‑го.
+          </li>
+        </ol>
+
+        <h2><span class="hh">06</span> Что реально к&nbsp;2050‑му, а&nbsp;что фантазия</h2>
+
+        <figure class="article-figure">
+          <img src="images/article-moon-city-2050.jpg" alt="Постоянное лунное поселение в 2050 году — купола, ракеты, рассвет Земли на горизонте" loading="lazy" />
+          <figcaption>
+            Реалистичный сценарий 2050‑го: десятки человек на&nbsp;ротации, индустриальный
+            ландшафт, регулярные рейсы Starship и&nbsp;Long March. Но&nbsp;не&nbsp;«город
+            на&nbsp;миллион», как обещают слайды.
+          </figcaption>
+        </figure>
+
+        <p>
+          Если разложить публичные планы по&nbsp;шкале «правда — оптимизм — фантазия»,
+          картина к&nbsp;2050‑му году выглядит так. <strong>Это будет реально:</strong>
+          постоянная американская база Artemis в&nbsp;районе южного полюса (10–30&nbsp;человек
+          на&nbsp;ротации), вторая&nbsp;— китайско‑российская ILRS, ядерные реакторы
+          у&nbsp;обеих, производство кислорода и&nbsp;воды на&nbsp;месте, регулярные
+          грузовые рейсы Starship и&nbsp;Long March, лунная связь и&nbsp;навигация,
+          частный туризм для очень богатых (билет&nbsp;— от&nbsp;50&nbsp;млн до&nbsp;250&nbsp;млн&nbsp;$).
+        </p>
+
+        <p>
+          <strong>Это будет частично реально:</strong> промышленная добыча льда (только
+          пилотные мощности), 3D‑печать структур из&nbsp;реголита (первые прототипы
+          к&nbsp;2035‑му), сельское хозяйство в&nbsp;закрытых модулях (эксперименты,
+          не&nbsp;промышленность), термоядерный гелий‑3 (топливо ещё не&nbsp;понадобится,
+          но&nbsp;добыча для медицины и&nbsp;квантовых вычислений идёт).
+        </p>
+
+        <p>
+          <strong>А&nbsp;вот это&nbsp;— ещё фантазия:</strong> города на&nbsp;тысячи
+          жителей, лунный лифт, массовый туризм, рождение детей в&nbsp;лунной гравитации
+          (медицинские риски не&nbsp;изучены), термоядерная энергетика на&nbsp;He‑3,
+          независимая от&nbsp;Земли лунная экономика. Всё это, скорее всего, история
+          второй половины XXI&nbsp;века&nbsp;— 2070‑х и&nbsp;дальше.
+        </p>
+
+        <div class="callout accent">
+          <span class="callout-tag">Главный вывод</span>
+          <p>
+            Будем&nbsp;ли мы&nbsp;жить на&nbsp;Луне к&nbsp;2050‑му? <strong>Да&nbsp;—
+            но&nbsp;не&nbsp;в&nbsp;смысле «переезжать туда».</strong> Несколько сотен
+            людей будут постоянно работать на&nbsp;Луне в&nbsp;режиме ротации, как
+            сегодня&nbsp;— на&nbsp;арктических станциях или МКС. Лунная база&nbsp;—
+            это не&nbsp;дом для человечества, а&nbsp;промышленная платформа и&nbsp;трамплин
+            к&nbsp;Марсу. И&nbsp;именно к&nbsp;2050‑му решится, кто этой платформой
+            будет управлять.
+          </p>
+        </div>
+
+        <p class="article-outro">
+          На&nbsp;NovaSphere мы&nbsp;продолжим следить за&nbsp;лунной гонкой&nbsp;—
+          от&nbsp;следующего запуска Starship и&nbsp;демонстрации орбитальной заправки
+          до&nbsp;ввода первого ядерного реактора и&nbsp;первой пробы лунного льда.
+          Подписывайтесь на&nbsp;обновления, чтобы не&nbsp;пропустить ключевые точки
+          этого 25‑летнего сюжета.
+        </p>
+
+        <div class="article-footer-meta">
+          <a href="index.html" class="cta-btn">
+            <span>На&nbsp;главную NovaSphere</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">◈</span>
+        <span>NovaSphere</span>
+      </div>
+      <p class="footer-tagline">Прототип портала науки и технологий · 2026</p>
+      <p class="footer-note">Данные носят аналитический характер и собраны на основе открытых источников</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
