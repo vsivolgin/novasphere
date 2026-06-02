@@ -977,3 +977,109 @@ main {
   border-color: #7dd3fc;
   color: #7dd3fc;
 }
+
+/* Cosmic profile generator — homepage CTA banner */
+.profile-cta-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.profile-cta {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(168, 85, 247, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(0, 229, 255, 0.18) 0%, transparent 55%),
+    linear-gradient(160deg, #06091a 0%, #030508 60%, #0a0418 100%);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.profile-cta:hover,
+.profile-cta:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 229, 255, 0.18);
+  outline: none;
+}
+
+.profile-cta-glow {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 75% 25%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 55% 75%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 90% 60%, rgba(255, 255, 255, 0.4), transparent);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.profile-cta-body {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2rem;
+  max-width: 680px;
+}
+
+.profile-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0, 229, 255, 0.06);
+  margin-bottom: 1.25rem;
+}
+
+.profile-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-cta-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.profile-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.profile-cta:hover .profile-cta-link svg,
+.profile-cta:focus-visible .profile-cta-link svg {
+  transform: translateX(4px);
+}
+
+.profile-cta-link svg {
+  transition: transform 0.2s;
+}
