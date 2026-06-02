@@ -104,6 +104,53 @@
       </a>
     </section>
 
+    <!-- ══ АНОНС ГЛАВНОЙ СТАТЬИ ══ -->
+    <section class="section featured-article-section">
+      <a href="article-moon-2050.html" class="featured-article">
+        <div class="featured-article-img" style="background-image: url('images/article-moon-cover.jpg');"></div>
+        <div class="featured-article-body">
+          <div class="featured-article-meta">
+            <span class="fa-chip arctic">Луна</span>
+            <span class="fa-chip">Лонгрид · 15 мин</span>
+          </div>
+          <h2 class="featured-article-title">
+            Луна&nbsp;2050: фантазии и&nbsp;реальные планы. Будем&nbsp;ли мы&nbsp;жить на&nbsp;Луне?
+          </h2>
+          <p class="featured-article-excerpt">
+            Через четверть века Луна перестанет быть «следом Армстронга» и&nbsp;превратится в&nbsp;индустриальную площадку трёх держав. Разбираемся, что в&nbsp;планах США, Китая и&nbsp;России&nbsp;— реальная инженерия, что&nbsp;— маркетинг, а&nbsp;что&nbsp;— чистая фантазия.
+          </p>
+          <span class="featured-article-cta">
+            Читать статью
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="article-arctic-antarctica.html" class="featured-article" style="margin-top: 32px;">
+        <div class="featured-article-img" style="background-image: url('images/article-cover.jpg');"></div>
+        <div class="featured-article-body">
+          <div class="featured-article-meta">
+            <span class="fa-chip arctic">Геополитика</span>
+            <span class="fa-chip">Лонгрид · 14 мин</span>
+          </div>
+          <h2 class="featured-article-title">
+            Арктика, Антарктида и&nbsp;что общего в&nbsp;этих двух гонках ведущих мировых держав
+          </h2>
+          <p class="featured-article-excerpt">
+            Две точки на&nbsp;противоположных концах планеты, разные правовые режимы, разные климатические сценарии&nbsp;— и&nbsp;всё-таки одна шахматная партия. Разбираем, что общего у&nbsp;битв за&nbsp;Арктику и&nbsp;Антарктиду на&nbsp;горизонте 2026–2048 годов.
+          </p>
+          <span class="featured-article-cta">
+            Читать статью
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </section>
+
     <section id="news" class="section news-section">
       <div class="section-header">
         <h2 class="section-title">
@@ -114,151 +161,27 @@
       <div class="news-grid" id="news-grid"></div>
     </section>
 
-    <section id="profile" class="section profile-section" aria-labelledby="profile-title">
-      <div class="section-header">
-        <h2 class="section-title" id="profile-title">
-          <span class="title-deco">//</span> Генератор космического профиля
-        </h2>
-        <p class="section-desc">
-          Узнайте, кем бы вы стали в экспедиции «Новые горизонты» — от инженера лунной базы
-          до архитектора марсианских куполов. Ответьте на несколько вопросов и получите
-          персональный постер.
-        </p>
-      </div>
-
-      <div class="profile-layout">
-        <form class="profile-form" id="profile-form" novalidate aria-describedby="profile-form-hint">
-          <p id="profile-form-hint" class="visually-hidden">
-            Введите имя или позывной и выберите три ответа, чтобы получить персональный космический профиль.
+    <section id="profile" class="section profile-cta-section" aria-labelledby="profile-cta-title">
+      <a href="cosmic-profile.html" class="profile-cta" aria-describedby="profile-cta-desc">
+        <div class="profile-cta-glow" aria-hidden="true"></div>
+        <div class="profile-cta-body">
+          <span class="profile-cta-badge">◈ Интерактив · «Новые горизонты»</span>
+          <h2 class="profile-cta-title" id="profile-cta-title">
+            Генератор космического профиля
+          </h2>
+          <p class="profile-cta-desc" id="profile-cta-desc">
+            Узнайте, кем бы вы стали в экспедиции — от инженера лунной базы до архитектора
+            марсианских куполов. Ответьте на три вопроса и получите персональный постер,
+            которым можно поделиться.
           </p>
-
-          <div class="profile-field">
-            <label for="profile-name" class="profile-label">
-              <span class="profile-step">01</span> Ваше имя или позывной
-            </label>
-            <input
-              type="text"
-              id="profile-name"
-              name="profile-name"
-              class="profile-input"
-              placeholder="Например, Орион"
-              maxlength="32"
-              autocomplete="off"
-              required
-            />
-          </div>
-
-          <fieldset class="profile-field profile-question" data-question="environment">
-            <legend class="profile-label">
-              <span class="profile-step">02</span> Где вас тянет работать?
-            </legend>
-            <div class="profile-options" role="radiogroup" aria-label="Среда экспедиции">
-              <label class="profile-option">
-                <input type="radio" name="environment" value="moon" required />
-                <span>Лунная база у южного полюса</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="environment" value="mars" />
-                <span>Марсианский купол под красным небом</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="environment" value="orbit" />
-                <span>Орбитальная станция в невесомости</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="environment" value="arctic" />
-                <span>Полярная станция в Арктике</span>
-              </label>
-            </div>
-          </fieldset>
-
-          <fieldset class="profile-field profile-question" data-question="strength">
-            <legend class="profile-label">
-              <span class="profile-step">03</span> Что в вас сильнее всего?
-            </legend>
-            <div class="profile-options" role="radiogroup" aria-label="Сильная сторона">
-              <span class="visually-hidden">Выберите одно из качеств</span>
-              <label class="profile-option">
-                <input type="radio" name="strength" value="engineer" required />
-                <span>Инженерная смекалка — собрать из подручного</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="strength" value="analyst" />
-                <span>Холодный анализ — увидеть закономерность в данных</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="strength" value="dreamer" />
-                <span>Визионерство — представить то, чего ещё нет</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="strength" value="explorer" />
-                <span>Бесстрашие — первым ступить туда, где не был никто</span>
-              </label>
-            </div>
-          </fieldset>
-
-          <fieldset class="profile-field profile-question" data-question="mindset">
-            <legend class="profile-label">
-              <span class="profile-step">04</span> Ваше отношение к неизведанному
-            </legend>
-            <div class="profile-options" role="radiogroup" aria-label="Тип мышления">
-              <label class="profile-option">
-                <input type="radio" name="mindset" value="pioneer" required />
-                <span>Первопроходец — иду первым, остальные за мной</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="mindset" value="analyst" />
-                <span>Аналитик — проверяю гипотезы прежде чем верить</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="mindset" value="dreamer" />
-                <span>Мечтатель — двигаюсь к большой цели</span>
-              </label>
-              <label class="profile-option">
-                <input type="radio" name="mindset" value="skeptic" />
-                <span>Скептик — задаю неудобные вопросы догмам</span>
-              </label>
-            </div>
-          </fieldset>
-
-          <div class="profile-actions">
-            <button type="submit" class="cta-btn profile-submit">
-              <span>Сгенерировать профиль</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </button>
-            <button type="reset" class="profile-reset" id="profile-reset">Сбросить</button>
-          </div>
-          <p class="profile-error" id="profile-error" role="alert" aria-live="polite"></p>
-        </form>
-
-        <div class="profile-result" id="profile-result" aria-live="polite" aria-atomic="true">
-          <div class="profile-poster profile-poster--empty" id="profile-poster">
-            <div class="poster-frame">
-              <div class="poster-watermark" aria-hidden="true">Новые горизонты · novasphere</div>
-              <div class="poster-empty">
-                <div class="poster-empty-icon" aria-hidden="true">◈</div>
-                <p class="poster-empty-text">
-                  Заполните анкету слева — здесь появится ваш персональный космический постер.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="profile-share" id="profile-share" hidden>
-            <button type="button" class="profile-share-btn" data-action="copy-text">
-              <span aria-hidden="true">⧉</span> Скопировать текст
-            </button>
-            <button type="button" class="profile-share-btn" data-action="download">
-              <span aria-hidden="true">⬇</span> Сохранить постер
-            </button>
-            <button type="button" class="profile-share-btn" data-action="share">
-              <span aria-hidden="true">↗</span> Поделиться
-            </button>
-            <p class="profile-share-status" id="profile-share-status" role="status" aria-live="polite"></p>
-          </div>
+          <span class="profile-cta-link">
+            Создать свой профиль
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
         </div>
-      </div>
+      </a>
     </section>
 
     <section id="moon" class="section moon-section">

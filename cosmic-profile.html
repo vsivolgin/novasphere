@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Генератор космического профиля — NovaSphere</title>
+  <meta name="description" content="Создайте персональный космический профиль «Новые горизонты»: роль в экспедиции, миссия, сильные стороны и постер, которым можно поделиться." />
+  <link rel="canonical" href="https://vsivolgin.github.io/novasphere/cosmic-profile.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="NovaSphere" />
+  <meta property="og:locale"      content="ru_RU" />
+  <meta property="og:url"         content="https://vsivolgin.github.io/novasphere/cosmic-profile.html" />
+  <meta property="og:title"       content="Генератор космического профиля — NovaSphere" />
+  <meta property="og:description" content="Узнайте, кем бы вы стали в экспедиции «Новые горизонты», и поделитесь персональным постером." />
+  <meta property="og:image"       content="https://vsivolgin.github.io/novasphere/og-preview.png" />
+  <meta property="og:image:alt"   content="NovaSphere — Космический мониторинг 2026" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Генератор космического профиля — NovaSphere" />
+  <meta name="twitter:description" content="Узнайте, кем бы вы стали в экспедиции «Новые горизонты», и поделитесь персональным постером." />
+  <meta name="twitter:image"       content="https://vsivolgin.github.io/novasphere/og-preview.png" />
+
+  <meta name="theme-color" content="#030508" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cosmic-profile.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula nebula-1" aria-hidden="true"></div>
+  <div class="nebula nebula-2" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">Nova<span>Sphere</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#news">Новости</a></li>
+        <li><a href="cosmic-profile.html" class="active">Профиль</a></li>
+        <li><a href="index.html#moon">Луна</a></li>
+        <li><a href="index.html#mars">Марс</a></li>
+        <li><a href="index.html#tech">Технологии</a></li>
+        <li><a href="index.html#missions">Миссии</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Меню" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section profile-page-hero">
+      <a href="index.html#news" class="profile-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        На главную
+      </a>
+      <div class="profile-page-badge">◈ Интерактив · «Новые горизонты»</div>
+      <h1 class="profile-page-title">Генератор космического профиля</h1>
+      <p class="profile-page-lead">
+        Границы человечества расширяются — географически и ментально. Узнайте, кем бы стали
+        именно вы в экспедиции «Новые горизонты»: от инженера лунной базы до архитектора
+        марсианских куполов. Ответьте на три вопроса и получите персональный постер,
+        которым можно поделиться.
+      </p>
+    </section>
+
+    <section id="profile" class="section profile-section" aria-labelledby="profile-title">
+      <h2 class="section-title visually-hidden" id="profile-title">Анкета космического профиля</h2>
+      <div class="profile-layout">
+        <form class="profile-form" id="profile-form" novalidate aria-describedby="profile-form-hint">
+          <p id="profile-form-hint" class="visually-hidden">
+            Введите имя или позывной и выберите три ответа, чтобы получить персональный космический профиль.
+          </p>
+
+          <div class="profile-field">
+            <label for="profile-name" class="profile-label">
+              <span class="profile-step">01</span> Ваше имя или позывной
+            </label>
+            <input
+              type="text"
+              id="profile-name"
+              name="profile-name"
+              class="profile-input"
+              placeholder="Например, Орион"
+              maxlength="32"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <fieldset class="profile-field profile-question" data-question="environment">
+            <legend class="profile-label">
+              <span class="profile-step">02</span> Где вас тянет работать?
+            </legend>
+            <div class="profile-options" role="radiogroup" aria-label="Среда экспедиции">
+              <label class="profile-option">
+                <input type="radio" name="environment" value="moon" required />
+                <span>Лунная база у южного полюса</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="environment" value="mars" />
+                <span>Марсианский купол под красным небом</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="environment" value="orbit" />
+                <span>Орбитальная станция в невесомости</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="environment" value="arctic" />
+                <span>Полярная станция в Арктике</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="profile-field profile-question" data-question="strength">
+            <legend class="profile-label">
+              <span class="profile-step">03</span> Что в вас сильнее всего?
+            </legend>
+            <div class="profile-options" role="radiogroup" aria-label="Сильная сторона">
+              <span class="visually-hidden">Выберите одно из качеств</span>
+              <label class="profile-option">
+                <input type="radio" name="strength" value="engineer" required />
+                <span>Инженерная смекалка — собрать из подручного</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="strength" value="analyst" />
+                <span>Холодный анализ — увидеть закономерность в данных</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="strength" value="dreamer" />
+                <span>Визионерство — представить то, чего ещё нет</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="strength" value="explorer" />
+                <span>Бесстрашие — первым ступить туда, где не был никто</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="profile-field profile-question" data-question="mindset">
+            <legend class="profile-label">
+              <span class="profile-step">04</span> Ваше отношение к неизведанному
+            </legend>
+            <div class="profile-options" role="radiogroup" aria-label="Тип мышления">
+              <label class="profile-option">
+                <input type="radio" name="mindset" value="pioneer" required />
+                <span>Первопроходец — иду первым, остальные за мной</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="mindset" value="analyst" />
+                <span>Аналитик — проверяю гипотезы прежде чем верить</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="mindset" value="dreamer" />
+                <span>Мечтатель — двигаюсь к большой цели</span>
+              </label>
+              <label class="profile-option">
+                <input type="radio" name="mindset" value="skeptic" />
+                <span>Скептик — задаю неудобные вопросы догмам</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="profile-actions">
+            <button type="submit" class="cta-btn profile-submit">
+              <span>Сгенерировать профиль</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+            <button type="reset" class="profile-reset" id="profile-reset">Сбросить</button>
+          </div>
+          <p class="profile-error" id="profile-error" role="alert" aria-live="polite"></p>
+        </form>
+
+        <div class="profile-result" id="profile-result" aria-live="polite" aria-atomic="true">
+          <div class="profile-poster profile-poster--empty" id="profile-poster">
+            <div class="poster-frame">
+              <div class="poster-watermark" aria-hidden="true">Новые горизонты · novasphere</div>
+              <div class="poster-empty">
+                <div class="poster-empty-icon" aria-hidden="true">◈</div>
+                <p class="poster-empty-text">
+                  Заполните анкету слева — здесь появится ваш персональный космический постер.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="profile-share" id="profile-share" hidden>
+            <button type="button" class="profile-share-btn" data-action="copy-text">
+              <span aria-hidden="true">⧉</span> Скопировать текст
+            </button>
+            <button type="button" class="profile-share-btn" data-action="download">
+              <span aria-hidden="true">⬇</span> Сохранить постер
+            </button>
+            <button type="button" class="profile-share-btn" data-action="share">
+              <span aria-hidden="true">↗</span> Поделиться
+            </button>
+            <p class="profile-share-status" id="profile-share-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">◈</span>
+        <span>NovaSphere</span>
+      </div>
+      <p class="footer-tagline">Прототип портала науки и технологий · 2026</p>
+      <p class="footer-note">Данные носят демонстрационный характер</p>
+    </div>
+  </footer>
+
+  <script src="cosmic-profile.js"></script>
+</body>
+</html>
